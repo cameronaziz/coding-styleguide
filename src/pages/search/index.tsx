@@ -11,7 +11,7 @@ interface StateProps {
 
 interface DispatchProps {
   setIsLoading: typeof actions.setIsLoading
-  // Thunks need to return what is actually returned, not just `typeof thunkAction`
+  // Thunks need to return what is actually returned, not just `typeof thunkAction`, because that is the dispatch.
   requestSearch: (params: SearchRequest) => Promise<boolean>
 }
 
@@ -78,7 +78,7 @@ const mapDispatchToProps = (dispatch: ReduxThunkDispatch) => ({
 // You can use `bindActionCreators` if you prefer not to define what params
 // const mapDispatchToProps = (dispatch: ReduxThunkDispatch) => bindActionCreators({
 //   setIsLoading: actions.setIsLoading,
-//   requestSearch: actions.requestSearch
+//   requestSearch: actions.requestRemoteSearch
 // }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

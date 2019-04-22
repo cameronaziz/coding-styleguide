@@ -3,11 +3,12 @@ const sleep = (time: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
 
-const api = async (searchString: string) => {
+const api = async (searchString: string): Promise<SearchResult[]> => {
   // Delay that ish
   const results = await sleep(3000).then(() => {
+    // Fint the data
     return fakeData.filter((element) => {
-      const lowerCaseElement = element.text.toLowerCase()
+      const lowerCaseElement = element.name.toLowerCase()
       return lowerCaseElement.includes(searchString.toLowerCase())
     })
   })
@@ -18,153 +19,203 @@ export default api
 
 const fakeData = [
   {
-    text: 'Lee Brouwer'
+    id: '1',
+    name: 'Lee Brouwer'
   },
   {
-    text: 'Alexa Elkins'
+    id: '2',
+    name: 'Alexa Elkins'
   },
   {
-    text: 'Lanell Reasoner'
+    id: '3',
+    name: 'Lanell Reasoner'
   },
   {
-    text: 'Nikita Serio'
+    id: '4',
+    name: 'Nikita Serio'
   },
   {
-    text: 'Pauline Napolitano'
+    id: '5',
+    name: 'Pauline Napolitano'
   },
   {
-    text: 'Sharika Gumbs'
+    id: '6',
+    name: 'Sharika Gumbs'
   },
   {
-    text: 'Abbey Lampron'
+    id: '7',
+    name: 'Abbey Lampron'
   },
   {
-    text: 'Claud Boggan'
+    id: '8',
+    name: 'Claud Boggan'
   },
   {
-    text: 'Jene Pontius'
+    id: '9',
+    name: 'Jene Pontius'
   },
   {
-    text: 'Marcus Blanck'
+    id: '10',
+    name: 'Marcus Blanck'
   },
   {
-    text: 'Nancey Jesse'
+    id: '11',
+    name: 'Nancey Jesse'
   },
   {
-    text: 'Deandra Olivera'
+    id: '12',
+    name: 'Deandra Olivera'
   },
   {
-    text: 'Yesenia Mossey'
+    id: '13',
+    name: 'Yesenia Mossey'
   },
   {
-    text: 'Santiago Vandemark'
+    id: '14',
+    name: 'Santiago Vandemark'
   },
   {
-    text: 'Selene Eye'
+    id: '15',
+    name: 'Selene Eye'
   },
   {
-    text: 'Lester Anding'
+    id: '16',
+    name: 'Lester Anding'
   },
   {
-    text: 'Hortensia Italiano'
+    id: '17',
+    name: 'Hortensia Italiano'
   },
   {
-    text: 'Fidelia Detrick'
+    id: '18',
+    name: 'Fidelia Detrick'
   },
   {
-    text: 'Nu Bushway'
+    id: '19',
+    name: 'Nu Bushway'
   },
   {
-    text: 'Maye Plata'
+    id: '20',
+    name: 'Maye Plata'
   },
   {
-    text: 'Jose Woodman'
+    id: '21',
+    name: 'Jose Woodman'
   },
   {
-    text: 'Season Dunmore'
+    id: '22',
+    name: 'Season Dunmore'
   },
   {
-    text: 'Sal Debonis'
+    id: '23',
+    name: 'Sal Debonis'
   },
   {
-    text: 'Ingeborg Bizier'
+    id: '24',
+    name: 'Ingeborg Bizier'
   },
   {
-    text: 'Bill Pritts'
+    id: '25',
+    name: 'Bill Pritts'
   },
   {
-    text: 'Yanira Hoss'
+    id: '26',
+    name: 'Yanira Hoss'
   },
   {
-    text: 'Suzette Bettinger'
+    id: '27',
+    name: 'Suzette Bettinger'
   },
   {
-    text: 'Thelma Espana'
+    id: '28',
+    name: 'Thelma Espana'
   },
   {
-    text: 'Rosina Sgro'
+    id: '29',
+    name: 'Rosina Sgro'
   },
   {
-    text: 'Roseline Elamin'
+    id: '30',
+    name: 'Roseline Elamin'
   },
   {
-    text: 'Genna Coty'
+    id: '31',
+    name: 'Genna Coty'
   },
   {
-    text: 'Vincenzo Glotfelty'
+    id: '32',
+    name: 'Vincenzo Glotfelty'
   },
   {
-    text: 'Wava Fellers'
+    id: '33',
+    name: 'Wava Fellers'
   },
   {
-    text: 'Loise Radigan'
+    id: '34',
+    name: 'Loise Radigan'
   },
   {
-    text: 'Flo Noonan'
+    id: '35',
+    name: 'Flo Noonan'
   },
   {
-    text: 'Mathew Delavega'
+    id: '36',
+    name: 'Mathew Delavega'
   },
   {
-    text: 'Joey Mccullers'
+    id: '37',
+    name: 'Joey Mccullers'
   },
   {
-    text: 'Lacie Steigerwald'
+    id: '38',
+    name: 'Lacie Steigerwald'
   },
   {
-    text: 'Iliana Overcash'
+    id: '39',
+    name: 'Iliana Overcash'
   },
   {
-    text: 'Angle Duty'
+    id: '40',
+    name: 'Angle Duty'
   },
   {
-    text: 'Mariette Mckissack'
+    id: '41',
+    name: 'Mariette Mckissack'
   },
   {
-    text: 'Camila Summerfield'
+    id: '42',
+    name: 'Camila Summerfield'
   },
   {
-    text: 'Josie Stribling'
+    id: '43',
+    name: 'Josie Stribling'
   },
   {
-    text: 'Ivana Acord'
+    id: '44',
+    name: 'Ivana Acord'
   },
   {
-    text: 'Clemencia Beauvais'
+    id: '45',
+    name: 'Clemencia Beauvais'
   },
   {
-    text: 'Stevie Heckel'
+    id: '46',
+    name: 'Stevie Heckel'
   },
   {
-    text: 'Eboni Arvie'
+    id: '47',
+    name: 'Eboni Arvie'
   },
   {
-    text: 'Rochelle Allsop'
+    id: '48',
+    name: 'Rochelle Allsop'
   },
   {
-    text: 'Nila Raasch'
+    id: '49',
+    name: 'Nila Raasch'
   },
   {
-    text: 'Gilbert Blakemore'
+    id: '50',
+    name: 'Gilbert Blakemore'
   }
 ]
