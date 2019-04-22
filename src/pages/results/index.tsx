@@ -17,12 +17,12 @@ interface ResultsProps extends StateProps {
 // This definitely needs to be a FunctionComponent
 const Results: React.FunctionComponent<ResultsProps> = ({ results, isLoading }) => (
   <React.Fragment>
-    {isLoading &&
+    {isLoading ?
       <div>
         Loading...
-      </div>
-    }
-    {results.map((result) => (
+      </div> :
+      // We can map the results even with none because it is an array in state
+      results.map((result) => (
       <div key={result.name}>
         {result.name}
       </div>
