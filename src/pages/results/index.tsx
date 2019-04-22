@@ -23,8 +23,8 @@ const Results: React.FunctionComponent<ResultsProps> = ({ results, isLoading }) 
       </div>
     }
     {results.map((result) => (
-      <div key={result.text}>
-        {result.text}
+      <div key={result.name}>
+        {result.name}
       </div>
     ))}
   </React.Fragment>

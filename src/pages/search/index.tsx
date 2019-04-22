@@ -72,7 +72,7 @@ const mapStateToProps = (state: ReduxState): StateProps => ({
 // Don't forget to define what `dispatch` is.
 const mapDispatchToProps = (dispatch: ReduxThunkDispatch) => ({
   setIsLoading: (status: boolean) => dispatch(actions.setIsLoading(status)),
-  requestSearch: (params: SearchRequest) => dispatch(actions.requestSearch(params))
+  requestSearch: (params: SearchRequest) => dispatch(actions.requestRemoteSearch(params))
 })
 
 // You can use `bindActionCreators` if you prefer not to define what params

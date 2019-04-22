@@ -11,6 +11,8 @@ interface SearchRequest {
   term: string
 }
 
+
 interface SearchResult {
-  text: string
+  id: string
+  name: string
 }
