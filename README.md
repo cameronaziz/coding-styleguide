@@ -6,6 +6,11 @@ When developing software as an organization, the value of the software produced 
 ## This Application
 This application is built how we want our applcations to be build. Browse around and learn how we like to build things. A good place to start is the [App Component](src/pages/app/index.tsx). Read the comments throughout the files. They guide you to what the code is doing and why we do it that way.
 
+#### Instructions to Compile Application
+1. Clone this repository
+2.  `npm install`
+3.  `npm start`
+
 ## Our Guides
 Guides are still a work in progress. This application is complete, use that as your final rule.
 * [Typescript Guide](guides/typescript.md)
