@@ -2,7 +2,7 @@
 // Simply define what the data will be.
 // Prepend the query name, without underscores, as QueryNameData and QueryNameVariables
 interface FilteredPersonsData {
-  allPersons: SearchQueryResult[]
+  allPersons: SearchResult[]
 }
 
 interface FilteredPersonsVariables {
@@ -11,5 +11,5 @@ interface FilteredPersonsVariables {
 
 // ALL_PERSONS query does not have any variables so do not define AllPersonsVariables
 interface AllPersonsData {
-  allPersons: SearchQueryResult[]
+  allPersons: SearchResult[]
 }

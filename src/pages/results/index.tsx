@@ -20,7 +20,7 @@ interface ResultsProps extends StateProps {
 const Results: React.FunctionComponent<ResultsProps> = ({ results, isLoading }) => (
   <StyledResults>
     {isLoading ?
-      <StyledLoader /> :
+      <StyledLoader speed={0.5} /> :
       // We can map the results even with none because it is an array in state
       results.map((result) => (
       <div key={result.name}>
@@ -37,4 +37,9 @@ const mapStateToProps = (state: ReduxState): StateProps => ({
 })
 
 // mapDispatchToProps is an optional parameter but if you don't need state either, don't use connect
+// Any of the following:
+// export default connect(mapStateToProps, mapDispatchToProps)(Results)
+// export default connect(mapStateToProps)(Results)
+// export default connect(null, mapDispatchToProps)(Results)
+// export default Results
 export default connect(mapStateToProps)(Results)

@@ -14,13 +14,13 @@ export const requestSearch = (params: SearchRequest): ThunkResult<Promise<boolea
       // `dispatch` to receive the data or...
       dispatch(creators.receiveResults(results))
     } catch(error) {
-      // `catch` the error and `dispatch `the error action.
+      // `catch` the error and `dispatch` the error action.
       dispatch(creators.receiveError(error))
       success = false
     }
     // dispatch the isLoading action.
     dispatch(creators.setIsLoading(false))
-    // Return true if the action is called.
+    // Return true if the action is successful.
     // Because its a promise, a `.then` can be added to the execution of the action thunk.
     return success
   }
