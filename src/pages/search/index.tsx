@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../actions/search'
+import { StyledH1, StyledInput, StyledButton } from './ui'
 
 // Props that will be passed down from Redux state
 interface StateProps {
@@ -53,13 +54,16 @@ const Search: React.FunctionComponent<SearchBarProps> = ({ requestSearch, title 
   }
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <input onChange={handleChange} onKeyDown={handleKeyDown} />
-      <button onClick={search}>
-        Search
-      </button>
-    </div>
+    // If the component container doesn't need styling, use React.Fragment instead of a div.
+    <React.Fragment>
+      <StyledH1>{title}</StyledH1>
+      <div>
+        <StyledInput onChange={handleChange} onKeyDown={handleKeyDown} />
+        <StyledButton onClick={search}>
+          Search
+        </StyledButton>
+      </div>
+    </React.Fragment>
   )
 }
 

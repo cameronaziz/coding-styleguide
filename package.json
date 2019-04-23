@@ -11,6 +11,7 @@
     "@types/react-redux": "^7.0.8",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
+    "@types/styled-components": "^4.1.14",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
     "apollo-link-http": "^1.5.14",
@@ -24,6 +25,7 @@
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^4.2.0",
     "typescript": "3.4.4"
   },
   "scripts": {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { StyledResults, StyledLoader } from './ui'
 
 // Props that will be passed down from Redux state
 interface StateProps {
@@ -16,18 +17,16 @@ interface ResultsProps extends StateProps {
 
 // This definitely needs to be a FunctionComponent
 const Results: React.FunctionComponent<ResultsProps> = ({ results, isLoading }) => (
-  <React.Fragment>
+  <StyledResults>
     {isLoading ?
-      <div>
-        Loading...
-      </div> :
+      <StyledLoader /> :
       // We can map the results even with none because it is an array in state
       results.map((result) => (
       <div key={result.name}>
         {result.name}
       </div>
     ))}
-  </React.Fragment>
+  </StyledResults>
 )
 
 const mapStateToProps = (state: ReduxState): StateProps => ({
