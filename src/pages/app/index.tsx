@@ -3,7 +3,7 @@ import Search from '../search'
 import Results from '../results'
 import { StyledApp, GlobalStyle } from './ui'
 
-const App = () => (
+const App: React.FunctionComponent = () => (
   <StyledApp>
     <GlobalStyle />
     <Search title="Search Our Team" />

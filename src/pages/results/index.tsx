@@ -16,6 +16,7 @@ interface ResultsProps extends StateProps {
 }
 
 // This definitely needs to be a FunctionComponent
+// You don't need to defined what the return value is because React.FunctionComponent handles that for you.
 const Results: React.FunctionComponent<ResultsProps> = ({ results, isLoading }) => (
   <StyledResults>
     {isLoading ?

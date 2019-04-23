@@ -1,4 +1,4 @@
-const data = [
+const data: SearchResult[] = [
   {
     id: '1',
     name: 'Lee Brouwer'

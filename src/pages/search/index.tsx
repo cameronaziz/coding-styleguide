@@ -10,6 +10,7 @@ interface StateProps {
   results: SearchResult[]
 }
 
+// Props that will be passed down from Redux dispatch
 interface DispatchProps {
   setIsLoading: typeof actions.setIsLoading
   // Thunks need to return what is actually returned, not just `typeof thunkAction`, because that is the dispatch.
@@ -74,7 +75,7 @@ const mapStateToProps = (state: ReduxState): StateProps => ({
 })
 
 // Don't forget to define what `dispatch` is.
-const mapDispatchToProps = (dispatch: ReduxThunkDispatch) => ({
+const mapDispatchToProps = (dispatch: ReduxThunkDispatch): DispatchProps => ({
   setIsLoading: (status: boolean) => dispatch(actions.setIsLoading(status)),
   requestSearch: (params: SearchRequest) => dispatch(actions.requestRemoteSearch(params))
 })
