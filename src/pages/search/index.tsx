@@ -42,15 +42,13 @@ const Search: React.FunctionComponent<SearchBarProps> = ({ requestSearch, title 
   }
 
   // This `requestSearch` function is a promise, you can act on it completing now
-  const search = (): void => {
+  const search = async (): Promise<void> => {
     if (currentInput) {
       // and it's type is defined in the thunk, so no need to define here
-      requestSearch({ term: currentInput })
-        .then((success) => {
-          if (success) {
-            console.log('Seach completed but State hasn\'t updated yet.')
-          }
-        })
+      const success = await requestSearch({ term: currentInput })
+      if (success) {
+        console.log('Seach completed but State hasn\'t updated yet.')
+      }
     }
   }
 
