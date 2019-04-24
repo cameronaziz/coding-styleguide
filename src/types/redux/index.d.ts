@@ -5,7 +5,7 @@ interface ReduxState {
 
 // Every redux action. A `type` property is required for each one.
 // This means thunks should not be included.
-type ReduxActionTypes = SearchActionTypes
+type ReduxActionTypes = Search.ActionTypes
 
 // Helper types
 // This can be dropped in for any dispatch in both dispatch in thunks and mapDispatchToProps.
