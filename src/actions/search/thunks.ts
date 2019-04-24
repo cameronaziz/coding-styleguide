@@ -2,7 +2,7 @@ import api from '../../utils/api'
 import * as creators from './creators'
 import { client, FILTER_PERSONS_BY_NAME } from '../../graphql-queries'
 
-export const requestSearch = (params: SearchRequest): ThunkResult<Promise<boolean>> => {
+export const requestSearch = (params: Search.Request): ThunkResult<Promise<boolean>> => {
   // `return` an async function (just a promise with syntatical sugar)
   return async (dispatch: ReduxThunkDispatch): Promise<boolean> => {
     // `dispatch` the isLoading action
@@ -27,7 +27,7 @@ export const requestSearch = (params: SearchRequest): ThunkResult<Promise<boolea
 }
 
 // Everything of this thunk is the same, except the graphql piece.
-export const requestRemoteSearch = (params: SearchRequest): ThunkResult<Promise<boolean>> => {
+export const requestRemoteSearch = (params: Search.Request): ThunkResult<Promise<boolean>> => {
   return async (dispatch: ReduxThunkDispatch): Promise<boolean> => {
     dispatch(creators.setIsLoading(true))
     let success = true

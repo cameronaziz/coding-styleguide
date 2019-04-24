@@ -5,7 +5,7 @@ import { StyledResults, StyledLoader } from './ui'
 // Props that will be passed down from Redux state
 interface StateProps {
   isLoading: boolean
-  results: SearchResult[]
+  results: Search.Result[]
   error?: Error
 }
 

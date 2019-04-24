@@ -7,14 +7,14 @@ import { StyledH1, StyledInput, StyledButton } from './ui'
 interface StateProps {
   error?: Error
   isLoading: boolean
-  results: SearchResult[]
+  results: Search.Result[]
 }
 
 // Props that will be passed down from Redux dispatch
 interface DispatchProps {
   setIsLoading: typeof actions.setIsLoading
   // Thunks need to return what is actually returned, not just `typeof thunkAction`, because that is the dispatch.
-  requestSearch: (params: SearchRequest) => Promise<boolean>
+  requestSearch: (params: Search.Request) => Promise<boolean>
 }
 
 // Props that will be passed down from parents
@@ -75,7 +75,7 @@ const mapStateToProps = (state: ReduxState): StateProps => ({
 // Don't forget to define what `dispatch` is.
 const mapDispatchToProps = (dispatch: ReduxThunkDispatch): DispatchProps => ({
   setIsLoading: (status: boolean) => dispatch(actions.setIsLoading(status)),
-  requestSearch: (params: SearchRequest) => dispatch(actions.requestRemoteSearch(params))
+  requestSearch: (params: Search.Request) => dispatch(actions.requestRemoteSearch(params))
 })
 
 // You can use `bindActionCreators` if you prefer not to define what params

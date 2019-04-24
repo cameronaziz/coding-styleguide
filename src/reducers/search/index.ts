@@ -1,13 +1,13 @@
 import { cloneDeep } from 'lodash'
 
 // Do not define this type as Partial<SearchState>.
-const initialState: SearchState = {
+const initialState: Search.State = {
   isLoading: false,
   results: [],
 }
 
 // Use a switch statement on `action.type`. Typescript will figure out what parameters are on your action.
-const searchReducer = (state: SearchState = initialState, action: SearchActionTypes): SearchState => {
+const searchReducer = (state: Search.State = initialState, action: Search.ActionTypes): Search.State => {
   switch(action.type) {
     case'search/SET_IS_LOADING': {
       // Don't forget that state should be treated as immutable

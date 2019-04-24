@@ -1,18 +1,21 @@
+export * from './action-creators'
 // Since it is a declaration file, prepend everything with the reducer name.
 // Define reducer state.
-interface SearchState {
+export interface State {
   isLoading: boolean
   results: SearchResult[]
   error?: Error
 }
 
 // Define parameters and other types that pertain to the reducer.
-interface SearchRequest {
+export interface Request {
   term: string
 }
 
 
-interface SearchResult {
+export interface Result {
   id: string
   name: string
 }
+
+export as namespace Search
