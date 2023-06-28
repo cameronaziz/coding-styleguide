@@ -54,7 +54,7 @@ This is the TypeScript style guide that we use internally at dv01. It It's impor
 
 ## Files
   - All TypeScript files must have a ".ts" or ".tsx" extension.
-  - They should be all lower case, and only include letters, numbers, dashes and periods. But try to avoid numbers.
+  - They should be all lower case, and only include letters, numbers, and underscores. Try to avoid numbers.
   ```
   // bad
   file1Name.ts
