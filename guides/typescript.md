@@ -60,10 +60,10 @@ This is the TypeScript style guide that we use internally at dv01. It It's impor
   file1Name.ts
 
   // okay
-  file-1-name.ts
+  file_1_name.ts
 
   // good
-  file-one-name.ts
+  file_one_name.ts
   ```
   - **All files should end in a new line.** This is necessary for some Unix systems.
 
